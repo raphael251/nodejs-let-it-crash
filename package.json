@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-let-it-crash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "raphael251",
+  "license": "ISC",
+  "engines": {
+    "node": "v18.18.0"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^20.10.6"
+  }
+}
