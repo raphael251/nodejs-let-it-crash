@@ -5,16 +5,17 @@ const INSTANCES = 3
 
 function spinUpInstance() {
   const cp = spawn('node', ['server.js'])
+
   const log = prepareLog(cp.pid)
+
   log('starting...')
+
   cp.stdout.on('data', msg => console.log(msg.toString().trim()))
+
   cp.on('exit', code => {
-    const exitedWithSuccess = code === 0
+    const instanceCrashed = code === 1
     log(`exited with code ${code}`)
-    if (exitedWithSuccess) {
-      return
-    }
-    spinUpInstance()
+    if (instanceCrashed) spinUpInstance()
   })
 }
 

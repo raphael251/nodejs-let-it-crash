@@ -10,6 +10,8 @@ knownErrors.forEach(({exitCode, event}) => {
   process.on(event, (err) => {
     log(`Process exiting due to ${event}`, err.message)
     if (exitCode === UNKNOWN_ERROR) {
+      // we could use the process.abort() to take a snapshot of the system in the moment of the crash.
+      // process.abort()
       process.exit(exitCode)
       return
     }
